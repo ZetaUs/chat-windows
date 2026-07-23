@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat - Windows 下载</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --accent:#3b82f6;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Arial;background:#f7f8fb;color:#0f172a;margin:0;padding:24px;min-height:100vh}
+    .app{max-width:600px;margin:0 auto;text-align:center}
+    .brand{font-size:36px;margin:24px 0;letter-spacing:0.4px}
+    .lead{color:var(--muted);font-size:16px;margin-bottom:32px}
+    .btn{padding:12px 24px;border-radius:10px;border:1px solid transparent;cursor:pointer;font-weight:600;font-size:16px;text-decoration:none;display:inline-block;transition:transform 0.2s, box-shadow 0.2s}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#60a5fa);color:white;min-width:200px}
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(59,130,246,0.3)}
+    .btn.outline{background:transparent;border:1px solid #e6e9ef;color:var(--muted)}
+    .btn.outline:hover{border-color:var(--accent);color:var(--accent)}
+    .card{background:var(--card);border-radius:16px;box-shadow:0 10px 30px rgba(16,24,40,.06);padding:32px;margin-top:24px}
+    .version-info{color:var(--muted);font-size:14px;margin-top:16px}
+    .download-info{margin-top:24px;padding:16px;background:#f1f5ff;border-radius:10px;color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1 class="brand">Chat</h1>
+    <p class="lead">Windows 桌面客户端下载</p>
+    
+    <div class="card">
+      <a href="download/" class="btn primary">下载 Windows 版本</a>
+      <p class="version-info">最新版本: 1.1.4</p>
+    </div>
+    
+    <div class="download-info">
+      <p>• 支持 Windows 10/11 (64位)</p>
+      <p>• 安装包大小约 50MB</p>
+    </div>
+    
+    <br>
+    <a href="https://chatweb.zztxer.dpdns.org" class="btn outline">返回主页</a>
+  </div>
+
+  <script>
+    function downloadLatest() {
+      window.location.href = '/1.1.4_Chat_Setup_x64.exe';
+    }
+    
+    if (window.location.pathname === '/download') {
+      window.location.href = '/1.1.4_Chat_Setup_x64.exe';
+      setTimeout(function() {
+        window.location.href = '/';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat - 下载中</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --accent:#3b82f6;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Arial;background:#f7f8fb;color:#0f172a;margin:0;padding:24px;min-height:100vh;display:flex;align-items:center;justify-content:center}
+    .container{text-align:center;max-width:400px}
+    .spinner{width:48px;height:48px;border:4px solid #eef2ff;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .message{font-size:16px;color:var(--muted);margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <p class="message">正在开始下载...</p>
+    <p class="message" style="font-size:14px">下载将自动开始，即将返回主页</p>
+  </div>
+
+  <script>
+    window.location.href = '../1.1.4_Chat_Setup_x64.exe';
+    
+    setTimeout(function() {
+      window.location.href = '/';
+    }, 2000);
+  </script>
+</body>
+</html>
