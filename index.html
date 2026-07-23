@@ -13,9 +13,9 @@
     }
     *{box-sizing:border-box}
     body{font-family:Inter,system-ui,Segoe UI,Arial;background:#f7f8fb;color:#0f172a;margin:0;padding:24px;min-height:100vh}
-    .app{max-width:600px;margin:0 auto;text-align:center}
-    .brand{font-size:36px;margin:24px 0;letter-spacing:0.4px}
-    .lead{color:var(--muted);font-size:16px;margin-bottom:32px}
+    .app{max-width:600px;margin:0 auto}
+    .brand{font-size:36px;margin:24px 0;letter-spacing:0.4px;text-align:center}
+    .lead{color:var(--muted);font-size:16px;margin-bottom:32px;text-align:center}
     .btn{padding:12px 24px;border-radius:10px;border:1px solid transparent;cursor:pointer;font-weight:600;font-size:16px;text-decoration:none;display:inline-block;transition:transform 0.2s, box-shadow 0.2s}
     .btn.primary{background:linear-gradient(90deg,var(--accent),#60a5fa);color:white;min-width:200px}
     .btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(59,130,246,0.3)}
@@ -24,6 +24,17 @@
     .card{background:var(--card);border-radius:16px;box-shadow:0 10px 30px rgba(16,24,40,.06);padding:32px;margin-top:24px}
     .version-info{color:var(--muted);font-size:14px;margin-top:16px}
     .download-info{margin-top:24px;padding:16px;background:#f1f5ff;border-radius:10px;color:var(--muted);font-size:14px}
+    .versions-list{margin-top:24px}
+    .versions-list h3{font-size:18px;margin-bottom:16px;color:#0f172a}
+    .versions-list ul{list-style:none;padding:0;margin:0}
+    .versions-list li{padding:12px;border-bottom:1px solid #eef2ff}
+    .versions-list li:last-child{border-bottom:none}
+    .versions-list a{display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:#0f172a}
+    .versions-list a:hover{color:var(--accent)}
+    .versions-list .version-number{font-weight:600}
+    .versions-list .version-tag{font-size:12px;color:var(--muted)}
+    .latest-badge{background:#10b981;color:white;padding:2px 8px;border-radius:12px;font-size:12px;font-weight:600}
+    .text-center{text-align:center}
   </style>
 </head>
 <body>
@@ -31,9 +42,9 @@
     <h1 class="brand">Chat</h1>
     <p class="lead">Windows 桌面客户端下载</p>
     
-    <div class="card">
-      <a href="download/" class="btn primary">下载 Windows 版本</a>
-      <p class="version-info">最新版本: 1.1.4</p>
+    <div class="card text-center">
+      <a href="download/" class="btn primary">下载最新版本</a>
+      <p class="version-info">最新版本: 1.1.4 <span class="latest-badge">推荐</span></p>
     </div>
     
     <div class="download-info">
@@ -41,21 +52,22 @@
       <p>• 安装包大小约 50MB</p>
     </div>
     
-    <br>
-    <a href="https://chatweb.zztxer.dpdns.org" class="btn outline">返回主页</a>
-  </div>
-
-  <script>
-    function downloadLatest() {
-      window.location.href = '/1.1.4_Chat_Setup_x64.exe';
-    }
+    <div class="card versions-list">
+      <h3>历史版本</h3>
+      <ul>
+        <li><a href="1.1.4_Chat_Setup_x64.exe"><span class="version-number">1.1.4</span><span class="latest-badge">最新</span></a></li>
+        <li><a href="1.1.3_Chat_Setup_x64.exe"><span class="version-number">1.1.3</span><span class="version-tag">旧版本</span></a></li>
+        <li><a href="1.1.2_Chat_Setup_x64.exe"><span class="version-number">1.1.2</span><span class="version-tag">旧版本</span></a></li>
+        <li><a href="1.1.1_Chat_Setup_x64.exe"><span class="version-number">1.1.1</span><span class="version-tag">旧版本</span></a></li>
+        <li><a href="1.1.0_Chat_Setup_x64.exe"><span class="version-number">1.1.0</span><span class="version-tag">旧版本</span></a></li>
+        <li><a href="1.0.9_Chat_Setup_x64.exe"><span class="version-number">1.0.9</span><span class="version-tag">旧版本</span></a></li>
+      </ul>
+    </div>
     
-    if (window.location.pathname === '/download') {
-      window.location.href = '/1.1.4_Chat_Setup_x64.exe';
-      setTimeout(function() {
-        window.location.href = '/';
-      }, 5000);
-    }
-  </script>
+    <br>
+    <div class="text-center">
+      <a href="https://chatweb.zztxer.dpdns.org" class="btn outline">返回主页</a>
+    </div>
+  </div>
 </body>
 </html>
